@@ -5,6 +5,7 @@ from HumanPlayer import HumanPlayer
 from AiPlayer import AiPlayer
 from Deck import Deck
 from ExangeHands import ExangeHands
+from ShowCardUtils import ShowCardUtils
 
 class Showdown:
     def __init__(self, players, deck) -> None:
@@ -64,7 +65,7 @@ class Showdown:
 
     def printShowCards(self):
         for i in range(len(self.players)):
-            print(self.players[i].getName() + " shows " + self.cardsInARound[i].getSuit().name + " " + self.cardsInARound[i].getRank().name)
+            print('{:15}'.format(self.players[i].getName()) + " shows " + ShowCardUtils.toSuit(self.cardsInARound[i].getSuit()) + ShowCardUtils.toRank(self.cardsInARound[i].getRank()))
 
 
     def gameOver(self):
@@ -90,8 +91,6 @@ class Showdown:
         self.deck = deck
 
     def getDeck(self):
-        #for card in self.deck.cards:
-        #    print(card.getSuit().name, card.getRank().name)
         pass
 
     def dealCard(self):

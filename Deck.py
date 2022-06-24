@@ -30,8 +30,3 @@ class Deck:
 
     def setCards(self, cards):
         self.cards = cards
-        '''
-        print(len(self.cards))
-        for card in self.cards:
-            print(card.getSuit().name, card.getRank().name)
-        '''

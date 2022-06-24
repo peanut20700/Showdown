@@ -1,6 +1,7 @@
 from numpy import number
 from Player import Player
 from ValidateInputUtils import ValidateInputUtils
+from ShowCardUtils import ShowCardUtils
 
 class HumanPlayer(Player):
     def __init__(self) -> None:
@@ -22,7 +23,7 @@ class HumanPlayer(Player):
 
     def show(self):
         for i in range(len(self.hand)):
-            print(str(i+1) + " " + self.hand[i].getSuit().name + " " +  self.hand[i].getRank().name)
+            print('{:2}'.format(str(i+1)) + "  " + ShowCardUtils.toSuit(self.hand[i].getSuit()) + ShowCardUtils.toRank(self.hand[i].getRank()))
         selected = input("show 1 card from your hand : ")
         while not ValidateInputUtils.numberShouldBetween(1, len(self.hand), selected):
             print("input should between 1 ~ " + str(len(self.hand)))

@@ -17,8 +17,6 @@ class AiPlayer(Player):
         
 
     def show(self):
-        #print("len: " + str(len(self.hand)))
-        #print(self.getName()  + " turn")
         card = random.choice(self.hand)
         self.hand.remove(card)
         return card

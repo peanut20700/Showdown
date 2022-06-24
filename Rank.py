@@ -2,6 +2,8 @@ from enum import Enum
 from os import X_OK
 from telnetlib import X3PAD
 
+from attr import define
+from numpy import kaiser
 
 class Rank(Enum):
     II    = 2

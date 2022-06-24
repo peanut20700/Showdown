@@ -37,14 +37,5 @@ if __name__ == '__main__':
     deck = createDeck()
 
     showdown = Showdown(players, deck)
-    #showdown.getPlayers()
-    #showdown.getDeck()
     showdown.start()
     showdown.gameOver()
-    '''
-    for player in showdown.getPlayers():
-        print("\n" + player.getName())
-        for card in player.getHand():
-            print(card.getSuit().name, card.getRank().name)
-    '''
-
